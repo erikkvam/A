@@ -1,0 +1,1 @@
+**Experiment 6**: Falsos positius de fer servir K (calculat a partir de M i N) funcions d'H' en un filtre de Bloom vs. primer passar les claus per SHA 256 i després passar-les per les mateixes K funcions
