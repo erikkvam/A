@@ -52,6 +52,7 @@ int main(int argc, char *argv[]){
         maxN = charToInt(argv[4]);
         sizeT = charToInt(argv[5]);
         numberHashFunc = ((sizeT*9)/(nKeys*13));
+        if(numberHashFunc <= 0) numberHashFunc = 1;
         cout << "Calculating optimal number of hash functions = " << numberHashFunc << endl;
     }else{
         exit(0);
