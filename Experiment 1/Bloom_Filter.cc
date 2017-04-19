@@ -25,7 +25,7 @@ void Bloom_Filter::generateHashFunc(){
 //inserta un element al filtre de hash
 void Bloom_Filter::insertValue(int& key){
     for(int i = 0; i < hash_func.size(); ++i){
-        int pos = hash_func[i].hash(key);
+        int pos = hash_func[i].hash(key)%table.size();
         if(!table[pos]){
             table[pos] = true;
         }
@@ -43,7 +43,7 @@ void Bloom_Filter::printFilter(){
 //retorna true si el conté, false en cas contrari
 bool Bloom_Filter::possiblyContains(int& key){
     for(int i = 0; i < hash_func.size(); ++i){
-        int pos = hash_func[i].hash(key);
+        int pos = hash_func[i].hash(key)%table.size();
         if(!table[pos]){
             return false;
         } 
