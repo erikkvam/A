@@ -85,10 +85,24 @@ int main(int argc, char *argv[]){
             }
         }
         bloom.insertValue(key);
-        bloom.printFilter();
+        keys.push_back(key);
+        //bloom.printFilter(); //imprimir la taula del filtre de bloom 
         ++n_iterations;
     }
     cout << "Number false positives: " << n_false_positive << endl;
     cout << "Total iterations: " << n_iterations << endl;
+    cout << "Inserted keys: ";
+    for(int i = 0; i < keys.size(); ++i){
+        cout << keys[i] << " , ";
+    }
+    cout << endl << "Querys: ";
+    int entry;
+    while(cin >> entry){
+        if(bloom.possiblyContains(entry)){
+            cout << "On the filter!" << endl;
+        }else{
+            cout << "Not on filter" << endl;
+        }
+    }
 }
 
