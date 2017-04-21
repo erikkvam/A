@@ -1,8 +1,8 @@
-/** @file Bloom_Filter.hh
-    @brief Classe Bloom_Filter
+/** @file Bloom_Filter_Knuth.hh
+    @brief Classe Bloom_Filter_Knuth
  */
 
-#define BLOOM_FILTER_HH
+#define BLOOM_FILTER_KNUTH_HH
 
 #include <sstream>
 #include <vector>
@@ -10,28 +10,28 @@
 #include "stdlib.h"
 #include <random>
 #include <iostream>
-#include "Hash_Func_Mod.hh"
+#include "Hash_Multiply_Shift.hh"
 
 using namespace std;
 
-/** @class Bloom_Filter
+/** @class Bloom_Filter_Knuth
     @brief Representa un filtre de bloom.
  */
-class Bloom_Filter {
+class Bloom_Filter_Knuth {
 
 private:
     
     vector<bool> table;
 
-    vector<Hash_Func_Mod> hash_func;
-    int p;
-    int m;
+    vector<Hash_Multiply_Shift> hash_func;
+    int M;
+    int w;
 
 public:
     // Constructor
-    Bloom_Filter(int& k);
+    Bloom_Filter_Knuth(int k);
 
-    void setFamilyHashFunc(int& pFamily, int& mFamily);
+    void setFamilyHashFunc(int& mFamily, int wFamily);
 
     //genera una nova funcio de hash a,b de la familia p,m i la inserta en el vector de hash_func
     void generateHashFunc();
