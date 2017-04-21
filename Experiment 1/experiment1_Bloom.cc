@@ -84,11 +84,12 @@ int main(int argc, char *argv[]){
                 //cout << "false positive" << endl;
             }
         }
-        bloom.insertValue(key);
         keys.push_back(key);
+        bloom.insertValue(key);
         //bloom.printFilter(); //imprimir la taula del filtre de bloom 
         ++n_iterations;
     }
+    //bloom.printFilter(); //imprimir la taula del filtre de bloom 
     cout << "Number false positives: " << n_false_positive << endl;
     cout << "Total iterations: " << n_iterations << endl;
     cout << "Inserted keys: ";
