@@ -18,9 +18,9 @@ Exemple -> ./experiment1_Bloom 4 4235 2576 200 10000 2000
 Per compilar Cuckoo:
  #g++ experiment1_Cuckoo.cc Hash_Func_Mod.cc Cuckoo_Hashing.cc -o experiment1_Cuckoo
 
- Usage:
+Usage:
 
- ./experiment_Cuckoo [num taules] [p familia de hash] [m familia de hash] [num inserts] [max valor keyrandom] [mida de les taules]
+./experiment_Cuckoo [num taules] [p familia de hash] [m familia de hash] [num inserts] [max valor keyrandom] [mida de les taules]
 
- Exemple -> ./experiment1_Cuckoo 4 3556 2372 200 100000 200
+Exemple -> ./experiment1_Cuckoo 4 3556 2372 200 100000 200
  
