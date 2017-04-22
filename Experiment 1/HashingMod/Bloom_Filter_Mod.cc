@@ -16,16 +16,16 @@ void Bloom_Filter_Mod::generateHashFunc(){
     int a = rand() % p + 1;  // generates number in the range 1..p
     int b = rand() % p + 1;  // generates number in the range 1..p
 
-    //cout << "hash function: " << a << "," << b << endl;
+    cout << "hash function: " << a << "," << b << endl;
 
     Hash_Func_Mod function(p,m,a,b);
     hash_func.push_back(function);
 }
 
 //inserta un element al filtre de hash
-void Bloom_Filter_Mod::insertValue(int& key){
+void Bloom_Filter_Mod::insertValue(string key){
     for(int i = 0; i < hash_func.size(); ++i){
-        int pos = hash_func[i].hash(key)%table.size();
+        unsigned int pos = hash_func[i].hash(key)%table.size();
         if(!table[pos]){
             table[pos] = true;
         }
@@ -41,9 +41,9 @@ void Bloom_Filter_Mod::printFilter(){
 }
 
 //retorna true si el conté, false en cas contrari
-bool Bloom_Filter_Mod::possiblyContains(int& key){
+bool Bloom_Filter_Mod::possiblyContains(string key){
     for(int i = 0; i < hash_func.size(); ++i){
-        int pos = hash_func[i].hash(key)%table.size();
+        unsigned int pos = hash_func[i].hash(key)%table.size();
         if(!table[pos]){
             return false;
         } 

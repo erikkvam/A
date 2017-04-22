@@ -6,10 +6,10 @@
 
 #include <sstream>
 #include <vector>
-#include <string>
 #include "stdlib.h"
 #include <random>
 #include <iostream>
+#include <string.h>
 #include "Hash_Func_Mod.hh"
 
 using namespace std;
@@ -37,10 +37,10 @@ public:
     void generateHashFunc();
 
     //retorna true si l'ha insertat normalment, false si ja hi era
-    void insertValue(int& key);
+    void insertValue(string key);
 
     //retorna true si el conté, false en cas contrari
-    bool possiblyContains(int& key);
+    bool possiblyContains(string key);
 
     void printFilter();
 };

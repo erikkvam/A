@@ -6,7 +6,7 @@
 
 #include <sstream>
 #include <vector>
-#include <string>
+#include <string.h>
 #include <cmath>
 #include "stdlib.h"
 #include <iostream>
@@ -30,6 +30,6 @@ public:
 
     Hash_Func_Mod(int& paux,int& maux,int& aaux,int& baux);
 
-    int hash(int& value);
+    unsigned int hash(string value);
 
 };
