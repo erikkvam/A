@@ -18,14 +18,14 @@ void Bloom_Filter_Knuth::generateHashFunc(){
     //cout << p;
     long b = rand() % p + 1;  // generates number in the range 1..p
 
-    //cout << "hash function: " << b << endl;
+    // cout << "hash function: " << b << endl;
 
     Hash_Multiply_Shift function(b,w,M);
     hash_func.push_back(function);
 }
 
 //inserta un element al filtre de hash
-void Bloom_Filter_Knuth::insertValue(int& key){
+void Bloom_Filter_Knuth::insertValue(string key){
     for(int i = 0; i < hash_func.size(); ++i){
         int pos = hash_func[i].hash(key)%table.size();
         if(!table[pos]){
@@ -43,7 +43,7 @@ void Bloom_Filter_Knuth::printFilter(){
 }
 
 //retorna true si el conté, false en cas contrari
-bool Bloom_Filter_Knuth::possiblyContains(int& key){
+bool Bloom_Filter_Knuth::possiblyContains(string key){
     for(int i = 0; i < hash_func.size(); ++i){
         int pos = hash_func[i].hash(key)%table.size();
         if(!table[pos]){

@@ -29,6 +29,6 @@ public:
 
     Hash_Multiply_Shift(long& baux,int& waux,int& Maux);
 
-    int hash(int& value);
+    int hash(string value);
 
 };
